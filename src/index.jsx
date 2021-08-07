@@ -4,13 +4,14 @@ import './styles/index.css';
 import App from './App';
 import Amplify from 'aws-amplify'
 import config from './aws-exports'
+import { BrowserRouter } from 'react-router-dom';
 
 Amplify.configure(config);
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
