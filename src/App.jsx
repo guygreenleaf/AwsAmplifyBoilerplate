@@ -13,8 +13,8 @@ function App() {
     <div className="App">
     <Switch>
 
-      <Route path="/home" component={UserHome} />
       <Route path="/" exact component={Landing} />
+      <Route path="/home" component={UserHome} />
 
     </Switch>
     
