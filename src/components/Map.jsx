@@ -21,11 +21,11 @@ function Map() {
 
         <div>
         <TopBar  text = {isLoggedIn ? "Account" : "Sign in/Sign Up" } />
-        {/* <ReactMapGL
+        <ReactMapGL
                 {...viewport}
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
                 onViewportChange={nextViewport => setViewport(nextViewport)}
-        /> */}
+        />
     </div>
     )
 }
