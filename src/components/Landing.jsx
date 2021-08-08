@@ -59,7 +59,7 @@ function Landing() {
        <div style={{marginLeft: "40%"}}>
        <img src={fancy} alt="" style = {{width: "250px"}} />
         <h2 style = {{color: 'white', alignSelf: 'center', fontSize: "60px"}}>Mappler</h2>
-        <h3 style = {{color: 'white', alignSelf: 'center', paddingBottom: "300px", marginLeft:"5px", fontSize: "20px"}}>Location + social media</h3>
+        <h3 style = {{color: 'white', alignSelf: 'center', paddingBottom: "300px", marginLeft:"5px", fontSize: "20px"}}>Location + Social Media</h3>
        
        </div>
        
