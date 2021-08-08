@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import ReactMapGL from 'react-map-gl';
+// import ReactMapGL from 'react-map-gl';
 import TopBar from './TopBar'
 import {useHistory} from 'react-router-dom';
 
@@ -19,11 +19,11 @@ function Map() {
     return (
         <div>
         <TopBar  text = {isLoggedIn ? "Account" : "Sign in/Sign Up" } />
-        <ReactMapGL
+        {/* <ReactMapGL
                 {...viewport}
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
                 onViewportChange={nextViewport => setViewport(nextViewport)}
-        />
+        /> */}
     </div>
     )
 }
