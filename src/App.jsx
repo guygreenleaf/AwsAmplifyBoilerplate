@@ -13,11 +13,9 @@ function App() {
   return (
     <div className="App" style={{margin: 0}}>
     <Switch>
-
       <Route path="/" exact component={Landing} />
       <Route path="/home" component={UserHome} />
       <Route path="/map" component={Map} />
-
     </Switch>
     
     </div>
