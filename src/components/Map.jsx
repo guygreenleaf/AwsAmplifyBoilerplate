@@ -17,8 +17,6 @@ function Map() {
       const [isLoggedIn, login] = useState(false);
 
     return (
-
-//test
         <div>
         <TopBar  text = {isLoggedIn ? "Account" : "Sign in/Sign Up" } />
         <ReactMapGL
