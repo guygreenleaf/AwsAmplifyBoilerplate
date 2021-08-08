@@ -4,8 +4,8 @@ import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 function UserHome() {
     return (
         <div>
-<div> time to login! </div>
-        <AmplifySignOut />    
+            <div> FLOGGER </div>
+            <AmplifySignOut />    
         </div>
         
     )
