@@ -18,7 +18,7 @@ function Map() {
 
     return (
 
-
+//test
         <div>
         <TopBar  text = {isLoggedIn ? "Account" : "Sign in/Sign Up" } />
         <ReactMapGL
