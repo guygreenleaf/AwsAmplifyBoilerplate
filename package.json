@@ -12,6 +12,7 @@
     "aws-amplify": "^4.2.2",
     "aws-amplify-react": "^5.0.8",
     "dotenv": "^10.0.0",
+    "mapbox-gl": "^2.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-map-gl": "^6.1.16",

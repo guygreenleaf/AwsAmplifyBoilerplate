@@ -3,6 +3,11 @@ import { useState } from 'react';
 import ReactMapGL from 'react-map-gl';
 import TopBar from './TopBar'
 import {useHistory} from 'react-router-dom';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from 'mapbox-gl';
+
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 function Map() {
   
