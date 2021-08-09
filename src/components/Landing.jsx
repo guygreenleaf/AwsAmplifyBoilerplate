@@ -49,23 +49,26 @@ function Landing() {
     //     <Greetings/>
     //     <AlwaysOn/>
     // </Authenticator>
-
+ 
     //  might want to replace address with this for image: https://thumbs.gfycat.com/FelineAgreeableAmmonite-size_restricted.gif
     // backgroundImage: `url("https://thumbs.gfycat.com/FelineAgreeableAmmonite-size_restricted.gif")`
-    <div style={{ display: 'flex' , flexDirection: 'column', height: "100vh", backgroundColor: 'black' }}>
-       
-      
-       <TopBar onPress = {routeChange} text = "Go To Maps" />
-       <div style={{marginLeft: "40%"}}>
-       <img src={fancy} alt="" style = {{width: "250px"}} />
-        <h2 style = {{color: 'white', alignSelf: 'center', fontSize: "60px"}}>Mappler</h2>
-        <h3 style = {{color: 'white', alignSelf: 'center', paddingBottom: "300px", marginLeft:"5px", fontSize: "20px"}}>Location + Social Media</h3>
-       
-       </div>
-       
+    <>
+        <div style={{ display: 'flex' , flexDirection: 'column', backgroundColor: 'black' }}>
+        
+        
+        <TopBar onPress = {routeChange} text = "Go To Maps" />
+        <div style={{marginLeft: "40%"}}>
+        <img src={fancy} alt="" style = {{width: "250px"}} />
+            <h2 style = {{color: 'white', alignSelf: 'center', fontSize: "60px"}}>Mappler</h2>
+            <h3 style = {{color: 'white', alignSelf: 'center', paddingBottom: "300px", marginLeft:"5px", fontSize: "20px"}}>Location + Social Media</h3>
+        
+        </div>
+        
 
-     
-    </div>
+    
+        </div>
+        
+    </>
     )
 }
 

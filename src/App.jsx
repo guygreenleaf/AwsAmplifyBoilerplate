@@ -9,6 +9,8 @@ import  Landing  from './components/Landing';
 import  UserHome  from './components/UserHome';
 import Map from './components/Map';
 
+import './styles/app.css'
+
 function App() {
   return (
     <div className="App" style={{margin: 0}}>
