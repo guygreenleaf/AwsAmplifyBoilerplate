@@ -14,6 +14,7 @@ import TopBar from './TopBar'
 import {useHistory} from 'react-router-dom';
 import fancy from '../assets/fancy.gif'
 import '../styles/background.css'
+import '../styles/landing.css'
 // const AlwaysOn = (props) => {
 //     return (
 //         <div>
@@ -22,7 +23,6 @@ import '../styles/background.css'
 //         </div>
 //     )
 // }
-
 
 
 function Landing() {
@@ -53,14 +53,14 @@ function Landing() {
     //  might want to replace address with this for image: https://thumbs.gfycat.com/FelineAgreeableAmmonite-size_restricted.gif
     // backgroundImage: `url("https://thumbs.gfycat.com/FelineAgreeableAmmonite-size_restricted.gif")`
     <>
-        <div style={{ display: 'flex' , flexDirection: 'column', backgroundColor: 'black' }}>
+        <div className='outerContainer'>
         
         
         <TopBar onPress = {routeChange} text = "Go To Maps" />
-        <div style={{marginLeft: "40%"}}>
+        <div className = 'logoContainer'>
         <img src={fancy} alt="" style = {{width: "250px"}} />
-            <h2 style = {{color: 'white', alignSelf: 'center', fontSize: "60px"}}>Mappler</h2>
-            <h3 style = {{color: 'white', alignSelf: 'center', paddingBottom: "300px", marginLeft:"5px", fontSize: "20px"}}>Location + Social Media</h3>
+            <h2 className="mapplerLogo">Mappler</h2>
+            <h3 className="mapplerBottomText">Open Source Mapping <br></br> <div style={{marginLeft: '25px'}}>and Social Media</div></h3>
         
         </div>
         

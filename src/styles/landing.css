@@ -1,0 +1,30 @@
+.outerContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    
+}
+
+.logoContainer{
+    margin-left: 40%;
+}
+
+.mapplerLogo{
+    color: white;
+    align-self: center;
+    font-size: 60px;
+}
+
+.mapplerBottomText{
+    color: white;
+    align-self: center; 
+    margin-bottom: 300px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+    .logoContainer{
+        margin-left: 15%;
+    }
+  }
