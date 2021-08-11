@@ -83,8 +83,8 @@ function TopBar(props) {
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
-                   <div onClick = {goHome} style = {{cursor: 'pointer'}}>
-                    Mappler
+                   <div onClick = {goHome} style = {{cursor: 'pointer', fontSize: '25px'}}>
+                    TrlBlzr
                     </div>
                   <Typography className={classes.title} variant="h6" onClick = {goHome} style = {{cursor: 'pointer'}} noWrap />
                   <Button variant="contained" 

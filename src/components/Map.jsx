@@ -5,6 +5,7 @@ import TopBar from './TopBar'
 import {useHistory} from 'react-router-dom';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
+import PersonPinCircleIcon from '@material-ui/icons/PersonPinCircle';
 
 // eslint-disable-next-line import/no-webpack-loader-syntax
 mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
@@ -24,11 +25,15 @@ function Map() {
     return (
         <div>
         <TopBar  text = {isLoggedIn ? "Account" : "Sign in/Sign Up" } />
+        
         <ReactMapGL
                 {...viewport}
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
                 onViewportChange={nextViewport => setViewport(nextViewport)}
-        />
+        >
+            <PersonPinCircleIcon style={{fontSize: '100', color: 'black', cursor: 'pointer', position: 'fixed', bottom: '25', right: '20'}} />
+        </ReactMapGL>
+       
     </div>
     )
 }

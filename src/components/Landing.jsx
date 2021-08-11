@@ -59,7 +59,7 @@ function Landing() {
         <TopBar onPress = {routeChange} text = "Go To Maps" />
         <div className = 'logoContainer'>
         <img src={fancy} alt="" style = {{width: "250px"}} />
-            <h2 className="mapplerLogo">Mappler</h2>
+            <h2 className="mapplerLogo">TrlBlzr</h2>
             <h3 className="mapplerBottomText">Open Source Mapping <br></br> <div style={{marginLeft: '25px'}}>and Social Media</div></h3>
         
         </div>
