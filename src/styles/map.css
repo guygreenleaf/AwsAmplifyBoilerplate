@@ -1,0 +1,6 @@
+.loginForm{
+    background-color: white;
+    padding: 12%;
+    display: flex;
+    flex-direction: column;
+}
