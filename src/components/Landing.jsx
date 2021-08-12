@@ -15,6 +15,8 @@ import {useHistory} from 'react-router-dom';
 import fancy from '../assets/fancy.gif'
 import '../styles/background.css'
 import '../styles/landing.css'
+import { useState } from 'react'
+
 // const AlwaysOn = (props) => {
 //     return (
 //         <div>
@@ -40,7 +42,12 @@ function Landing() {
         }
     }
 
+    const [imageLoaded, setImageLoaded] = useState(false);
     
+    const handleImageLoad = () => {
+        setImageLoaded(true);
+    }
+
     return (
     // <Authenticator hideDefault={true} onStateChange={handleAuthStateChange}>
     //     <SignIn/>
@@ -57,10 +64,12 @@ function Landing() {
         
         
         <TopBar onPress = {routeChange} text = "Go To Maps" />
+        
         <div className = 'logoContainer'>
-        <img src={fancy} alt="" style = {{width: "250px"}} />
-            <h2 className="mapplerLogo">TrlBlzr</h2>
-            <h3 className="mapplerBottomText">Open Source Mapping <br></br> <div style={{marginLeft: '25px'}}>and Social Media</div></h3>
+        <img src={fancy} alt="" style = {{width: "250px"}} onLoad = {handleImageLoad} />
+
+            <h2 className= {imageLoaded ? "mapplerLogo" : "mapplerTextHide"} >TrlBlzr</h2>
+            <h3 className={imageLoaded ? "mapplerBottomText" : "mapplerTextHide" } >Open Source Mapping <br></br> <div style={{marginLeft: '25px'}}>and Social Media</div></h3>
         
         </div>
         
