@@ -11,6 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import CloseIcon from '@material-ui/icons/Close';
 import Button from '@material-ui/core/Button';
+import { Auth } from 'aws-amplify';
 
 import '../styles/map.css'
 
@@ -43,6 +44,23 @@ function Map() {
       const [userSignup, showSignup] = useState(false);
 
       const [backDrop, toggleBackDrop] = useState(false);
+
+      const [userName, setUsername] = useState('');
+      const [password, setPassword] = useState('');
+
+      const signIn = async () => {
+          try {
+              const user = await Auth.signIn(userName, password);
+              onSignIn(user);
+          } catch (error) {
+              console.log('sign in error:' + error);
+          }
+      }
+
+      const onSignIn = (user) => {
+          console.log('user signed in successfully!');
+          console.log(user);
+      }
 
       const toggleHandler = () => {
           toggleBackDrop(!backDrop);
@@ -87,15 +105,17 @@ function Map() {
 
                    
                     <h2 style={{color:'black'}}>Sign In</h2>
-                    <TextField id="standard-basic" label="Username" />
-                    <TextField id="standard-basic" label="Password" />
+                    <TextField id="username" label="Username" value={userName} onChange = {e => setUsername(e.target.value)} style={{marginBottom:"10px", marginTop:"10px"}} />
+                    <TextField id="password" label="Password" type='password' value={password}  onChange = {e => setPassword(e.target.value)}
+                     />
 
-                    <div style={{display: 'flex', flexDirection: 'row', marginTop:"10px"}}>
-                        <p style={{color:'black', fontSize: "14px", marginTop: "5px"}}>No account? <p style={{color:'dodgerblue', cursor: 'pointer', marginRight: "30px"}} onClick = {userClickedSignup}>Sign up</p> </p>
+                    <div style={{display: 'flex', flexDirection: 'column', marginTop:"10px"}}>
+                        <p style={{color:'black', fontSize: "13px", marginTop: "5px"}}>No account? </p>
+                        <p style={{color:'dodgerblue', cursor: 'pointer', marginRight: "30px", fontSize:'12px'}} onClick = {userClickedSignup}>Sign up</p> 
                     </div>  
 
                     <div style={{marginLeft:"60%", marginTop:"20px"}}>
-                     <Button size="medium" variant="contained" style={{background:'#1B1C1E', color: 'white'}}>Login</Button>
+                     <Button size="medium" variant="contained" style={{background:'#1B1C1E', color: 'white'}} onClick={signIn}>Login</Button>
                     </div>
 
 
