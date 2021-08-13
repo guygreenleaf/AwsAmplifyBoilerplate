@@ -12,6 +12,8 @@ import TextField from '@material-ui/core/TextField';
 import CloseIcon from '@material-ui/icons/Close';
 import Button from '@material-ui/core/Button';
 import { Auth } from 'aws-amplify';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 
 import '../styles/map.css'
 
@@ -26,6 +28,10 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
+
+function timeout(delay) {
+    return new Promise( res => setTimeout(res, delay) );
+}
 
 function Map() {
   
@@ -44,34 +50,62 @@ function Map() {
       const [userSignup, showSignup] = useState(false);
 
       const [backDrop, toggleBackDrop] = useState(false);
+      
+      const [errorText, showErrorText] = useState(false);
+
+      const [successText, showSuccessText] = useState(false);
+
+      const toggleHandler = () => {
+        toggleBackDrop(!backDrop);
+    }
 
       const [userName, setUsername] = useState('');
       const [password, setPassword] = useState('');
 
       const signIn = async () => {
           try {
+              showLoginCircle(true);
               const user = await Auth.signIn(userName, password);
               onSignIn(user);
           } catch (error) {
               console.log('sign in error:' + error);
+    
+              setUsername('');
+              setPassword('');
+              showLoginCircle(false);
+              showErrorText(true);
           }
       }
 
       const onSignIn = (user) => {
           console.log('user signed in successfully!');
-          console.log(user);
+          showSuccessText(true); 
+          setUsername('');
+          setPassword('');
+          toggleHandler();
+          showLoginCircle(false);
       }
 
-      const toggleHandler = () => {
-          toggleBackDrop(!backDrop);
-      }
 
       const handleClose = () => {
           toggleBackDrop(false);
+          setUsername('');
+          setPassword('');
+          showErrorText(false)
+          showSuccessText(false);
+          showLoginCircle(false);
       }
 
       const userClickedSignup = () => {
           showSignup(true);
+      }
+
+      const [progressLogin, showLoginCircle] = useState(false);
+
+      if(userName !== ''){
+          if(errorText){
+              showErrorText(false);
+          }
       }
 
     return (
@@ -103,8 +137,13 @@ function Map() {
                 
                 <div style={{display: 'flex', flexDirection: 'column', marginBottom:"50px", marginLeft: "20px", marginRight: "20px"}}>
 
-                   
+                <CircularProgress style={progressLogin ? {} : {display: 'none'}} />
+                
                     <h2 style={{color:'black'}}>Sign In</h2>
+                    <h5 style={errorText ? {color:'red', fontSize: "10px"} : { display:"none" }}>Username or password is incorrect.</h5> 
+
+                    <h5 style={successText ? {color:'green', fontSize: "10px"} : { display:"none" }}>Sign in successful</h5> 
+
                     <TextField id="username" label="Username" value={userName} onChange = {e => setUsername(e.target.value)} style={{marginBottom:"10px", marginTop:"10px"}} />
                     <TextField id="password" label="Password" type='password' value={password}  onChange = {e => setPassword(e.target.value)}
                      />
