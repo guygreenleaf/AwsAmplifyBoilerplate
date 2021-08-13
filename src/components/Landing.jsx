@@ -64,7 +64,7 @@ function Landing() {
         
         
         <TopBar onPress = {routeChange} text = "Go To Maps" />
-        
+
         <div className = 'logoContainer'>
         <img src={fancy} alt="" style = {{width: "250px"}} onLoad = {handleImageLoad} />
 

@@ -10,6 +10,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import CloseIcon from '@material-ui/icons/Close';
+import Button from '@material-ui/core/Button';
 
 import '../styles/map.css'
 
@@ -39,6 +40,8 @@ function Map() {
 
       const [isLoggedIn, login] = useState(false);
 
+      const [userSignup, showSignup] = useState(false);
+
       const [backDrop, toggleBackDrop] = useState(false);
 
       const toggleHandler = () => {
@@ -47,6 +50,10 @@ function Map() {
 
       const handleClose = () => {
           toggleBackDrop(false);
+      }
+
+      const userClickedSignup = () => {
+          showSignup(true);
       }
 
     return (
@@ -74,10 +81,29 @@ function Map() {
 
             <div className = 'loginForm'>
 
-                <CloseIcon style={{color:'black', cursor:'pointer'}} onClick={handleClose}></CloseIcon>
-                <h2 style={{color:'black'}}>Login</h2>
-                <TextField id="standard-basic" label="Username" />
-                <TextField id="standard-basic" label="Password" />
+                <CloseIcon style={{color:'black', fontSize: "20px", cursor:'pointer', marginBottom: '40px', marginLeft: "215px", marginTop:"5px"}} onClick={handleClose}></CloseIcon>
+                
+                <div style={{display: 'flex', flexDirection: 'column', marginBottom:"50px", marginLeft: "20px", marginRight: "20px"}}>
+
+                   
+                    <h2 style={{color:'black'}}>Sign In</h2>
+                    <TextField id="standard-basic" label="Username" />
+                    <TextField id="standard-basic" label="Password" />
+
+                    <div style={{display: 'flex', flexDirection: 'row', marginTop:"10px"}}>
+                        <p style={{color:'black', fontSize: "14px", marginTop: "5px"}}>No account? <p style={{color:'dodgerblue', cursor: 'pointer', marginRight: "30px"}} onClick = {userClickedSignup}>Sign up</p> </p>
+                    </div>  
+
+                    <div style={{marginLeft:"60%", marginTop:"20px"}}>
+                     <Button size="medium" variant="contained" style={{background:'#1B1C1E', color: 'white'}}>Login</Button>
+                    </div>
+
+
+                    <div style={{display: 'flex', flexDirection: 'row', marginTop:"5px"}}>
+                        <p style={{fontSize: "12px", marginTop: "5px", color:'dodgerblue', cursor: 'pointer', marginLeft:"65px"}}>Forgot your password?</p>
+                    </div>  
+
+                </div>
 
             </div>
 
