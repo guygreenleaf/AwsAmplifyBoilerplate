@@ -10,6 +10,10 @@ import  UserHome  from './components/UserHome';
 import Map from './components/Map';
 
 import './styles/app.css'
+import Amplify from 'aws-amplify'
+import config from './aws-exports'
+Amplify.configure(config);
+
 
 function App() {
   return (

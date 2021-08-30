@@ -1,5 +1,14 @@
-type Note @model {
+type User @model @auth(rules: [{allow: public}]) {
   id: ID!
-  name: String!
-  description: String
+  username: String!
+  friends: [String]
+  friendRequestsSent: [String]
+  friendRequestsReceieved: [String]
 }
+
+type Pin @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  location: String!
+  description: String!
+}
+ 

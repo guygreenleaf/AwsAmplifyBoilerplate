@@ -1,34 +1,91 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateNote = /* GraphQL */ `
-  subscription OnCreateNote {
-    onCreateNote {
+export const onCreateUser = /* GraphQL */ `
+  subscription OnCreateUser {
+    onCreateUser {
       id
-      name
-      description
+      username
+      friends
+      friendRequestsSent
+      friendRequestsReceieved
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
   }
 `;
-export const onUpdateNote = /* GraphQL */ `
-  subscription OnUpdateNote {
-    onUpdateNote {
+export const onUpdateUser = /* GraphQL */ `
+  subscription OnUpdateUser {
+    onUpdateUser {
       id
-      name
-      description
+      username
+      friends
+      friendRequestsSent
+      friendRequestsReceieved
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
   }
 `;
-export const onDeleteNote = /* GraphQL */ `
-  subscription OnDeleteNote {
-    onDeleteNote {
+export const onDeleteUser = /* GraphQL */ `
+  subscription OnDeleteUser {
+    onDeleteUser {
       id
-      name
+      username
+      friends
+      friendRequestsSent
+      friendRequestsReceieved
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreatePin = /* GraphQL */ `
+  subscription OnCreatePin {
+    onCreatePin {
+      id
+      location
       description
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdatePin = /* GraphQL */ `
+  subscription OnUpdatePin {
+    onUpdatePin {
+      id
+      location
+      description
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeletePin = /* GraphQL */ `
+  subscription OnDeletePin {
+    onDeletePin {
+      id
+      location
+      description
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
